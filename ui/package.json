@@ -65,11 +65,14 @@
     "webpack-dev-server": "3.7.2",
     "webpack-manifest-plugin": "2.0.4",
     "whatwg-fetch": "2.0.3",
-    "xterm": "4.1.0"
+    "xterm": "4.1.0",
+    "@snyk/protect": "latest"
   },
   "scripts": {
     "start": "cross-env NODE_ENV=development node scripts/start.js",
-    "build": "node scripts/build.js"
+    "build": "node scripts/build.js",
+    "prepare": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "devDependencies": {
     "@types/jest": "^23.3.10",
@@ -139,5 +142,6 @@
     "presets": [
       "react-app"
     ]
-  }
+  },
+  "snyk": true
 }
